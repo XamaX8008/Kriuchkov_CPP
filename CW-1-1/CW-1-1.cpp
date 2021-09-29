@@ -3,12 +3,12 @@
 //
 
 #include <iostream>
-
+#include <cmath>
 using namespace std;
 int main()
 {
     int x1, x2, x3, y1, y2, y3;
-    double a, b, c, p, r, q;
+    double a, b, c, p, r, q1, q2, relationship, x4, y4;
 
     cin >> x1 >> y1 >> x2 >> y2 >> x3 >> y3;
 
@@ -20,6 +20,13 @@ int main()
 
     r = 2 / a * sqrt(p * (p - a) * (p - b) * (p - c));
 
-    cout << "Distant of line  " << r;
+
+
+    q1 = sqrt(c * c - r *r );
+    q2 = sqrt(b * b - r * r);
+    relationship = q1 / q2;
+    x4 = (x1 + relationship * x2) /  (1 + relationship);
+    y4 = (y1 + relationship * y2) /  (1 + relationship);
+    cout << r << " " << x4 << " " << y4;
 
 }
