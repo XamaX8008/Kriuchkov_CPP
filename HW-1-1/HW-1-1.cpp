@@ -8,28 +8,28 @@
 using namespace std;
 
 int main() {
-    double a, b, c;
-    cin >> a >> b >> c;
+    double coefficientA, coefficientB, coefficientC;
+    cin >> coefficientA >> coefficientB >> coefficientC;
 
-    if ((a != 0 && b != 0) || (a != 0 && b == 0)) {
-        double discriminant = b * b - 4 * a * c;
+    if (coefficientA != 0) {
+        double discriminant = coefficientB * coefficientB - 4 * coefficientA * coefficientC;
         if (discriminant < 0) {
             return 0;
         } else if (discriminant == 0) {
-            double firstX = -b / (2 * a);
+            double firstX = -coefficientB / (2 * coefficientA);
             cout << firstX;
         } else {
-            double firstX = (-b + sqrt(discriminant)) / (2 * a);
-            double secondX = (-b - sqrt(discriminant)) / (2 * a);
+            double firstX = (-coefficientB + sqrt(discriminant)) / (2 * coefficientA);
+            double secondX = (-coefficientB - sqrt(discriminant)) / (2 * coefficientA);
             cout << firstX << " " << secondX;
         }
-    } else if (a == 0 && b == 0) {
-        cout << "Coefficients entered incorrectly";
-    } else if (a == 0) {
-        double firstX = (-c) / b;
+    } else if (coefficientA == 0 && coefficientB == 0) {
+        return 0;
+    } else if (coefficientA == 0) {
+        double firstX = (-coefficientC) / coefficientB;
         cout << firstX;
-    } else if (b == 0) {
-        double firstX = sqrt((-c) / b);
+    } else if (coefficientB == 0) {
+        double firstX = sqrt((-coefficientC) / coefficientB);
         cout << firstX;
     }
 
