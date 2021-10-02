@@ -7,14 +7,14 @@
 using namespace std;
 
 int main() {
-    double productPrice, firstConditionOfTheDiscount, secondConditionOfTheDiscount, firstDiscount, secondDiscount;
-    cin >> productPrice >> firstConditionOfTheDiscount >> secondConditionOfTheDiscount >> firstDiscount
+    double productPrice, firstConditionOfDiscount, secondConditionOfDiscount, firstDiscount, secondDiscount;
+    cin >> productPrice >> firstConditionOfDiscount >> secondConditionOfDiscount >> firstDiscount
         >> secondDiscount;
 
-    if (productPrice > secondConditionOfTheDiscount) {
+    if (productPrice > secondConditionOfDiscount) {
         productPrice = (productPrice / 100) * (100 - secondDiscount);
         cout << productPrice;
-    } else if (productPrice > firstConditionOfTheDiscount) {
+    } else if (productPrice > firstConditionOfDiscount) {
         productPrice = (productPrice / 100) * (100 - firstDiscount);
         cout << productPrice;
     } else {
