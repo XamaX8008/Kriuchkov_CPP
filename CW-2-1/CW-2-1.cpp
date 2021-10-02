@@ -7,14 +7,13 @@
 
 int main()
 {
-    std::string wordOne, wordTwo, wordThree;
+    std::string firstWord, secondWord, thirdWord;
+    std::cin >> firstWord >> secondWord >> thirdWord;
 
-    std::cin >> wordOne >> wordTwo >> wordThree;
+    std::string minWord = std::min(firstWord, secondWord);
+    minWord = std::min(minWord, thirdWord);
 
-    std::string minWordOneTwo = std::min(wordOne, wordTwo);
-    std::string minWordTwoThree = std::min(minWordOneTwo, wordThree);
-
-    std::cout << minWordTwoThree;
+    std::cout << minWord;
 
     return 0;
 }
