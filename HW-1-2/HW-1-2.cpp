@@ -3,18 +3,23 @@
 //
 
 #include <iostream>
-#include <cmath>
+
 using namespace std;
+
 int main() {
-    double N, A, B, X, Y;
-    cin >> N >> A >> B >> X >> Y;
-    if (N > B) {
-        N = (N / 100) * (100 - Y);
-        cout << N;
-    } else if (N > A) {
-        N = (N / 100) * (100 - X);
-        cout << N;
+    double productPrice, firstConditionOfTheDiscount, secondConditionOfTheDiscount, firstDiscount, secondDiscount;
+    cin >> productPrice >> firstConditionOfTheDiscount >> secondConditionOfTheDiscount >> firstDiscount
+        >> secondDiscount;
+
+    if (productPrice > secondConditionOfTheDiscount) {
+        productPrice = (productPrice / 100) * (100 - secondDiscount);
+        cout << productPrice;
+    } else if (productPrice > firstConditionOfTheDiscount) {
+        productPrice = (productPrice / 100) * (100 - firstDiscount);
+        cout << productPrice;
     } else {
-        cout << N;
+        cout << productPrice;
     }
+
+    return 0;
 }
