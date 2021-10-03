@@ -8,29 +8,29 @@
 using namespace std;
 
 int main() {
-    double coefficientA, coefficientB, coefficientC;
-    cin >> coefficientA >> coefficientB >> coefficientC;
+    double quadraticCoefficient, linearCoefficient, freeMember;
+    cin >> quadraticCoefficient >> linearCoefficient >> freeMember;
 
-    if (coefficientA != 0) {
-        double discriminant = coefficientB * coefficientB - 4 * coefficientA * coefficientC;
+    if (quadraticCoefficient != 0) {
+        double discriminant = linearCoefficient * linearCoefficient - 4 * quadraticCoefficient * freeMember;
         if (discriminant < 0) {
             return 0;
         } else if (discriminant == 0) {
-            double firstX = -coefficientB / (2 * coefficientA);
-            cout << firstX;
+            double firstRoot = -linearCoefficient / (2 * quadraticCoefficient);
+            cout << firstRoot;
         } else {
-            double firstX = (-coefficientB + sqrt(discriminant)) / (2 * coefficientA);
-            double secondX = (-coefficientB - sqrt(discriminant)) / (2 * coefficientA);
-            cout << firstX << " " << secondX;
+            double firstRoot = (-linearCoefficient + sqrt(discriminant)) / (2 * quadraticCoefficient);
+            double secondRoot = (-linearCoefficient - sqrt(discriminant)) / (2 * quadraticCoefficient);
+            cout << firstRoot << " " << secondRoot;
         }
-    } else if (coefficientA == 0 && coefficientB == 0) {
+    } else if (quadraticCoefficient == 0 && linearCoefficient == 0) {
         return 0;
-    } else if (coefficientA == 0) {
-        double firstX = (-coefficientC) / coefficientB;
-        cout << firstX;
-    } else if (coefficientB == 0) {
-        double firstX = sqrt((-coefficientC) / coefficientB);
-        cout << firstX;
+    } else if (quadraticCoefficient == 0) {
+        double firstRoot = (-freeMember) / linearCoefficient;
+        cout << firstRoot;
+    } else if (linearCoefficient == 0) {
+        double firstRoot = sqrt((-freeMember) / linearCoefficient);
+        cout << firstRoot;
     }
 
     return 0;
