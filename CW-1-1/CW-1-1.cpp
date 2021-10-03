@@ -8,25 +8,37 @@ using namespace std;
 
 int main()
 {
-    int firstCoordinateX, secondCoordinateX, thirdCoordinateX, firstCoordinateY, secondCoordinateY, thirdCoordinateY;
-    cin >> firstCoordinateX >> firstCoordinateY >> secondCoordinateX >> secondCoordinateY >> thirdCoordinateX
-        >> thirdCoordinateY;
+    int firstCoordinateOfStraightX, firstCoordinateOfStraightY, secondCoordinateOfStraightX,
+        secondCoordinateOfStraightY;
+    int pointCoordinateX,  pointCoordinateY;
+    cin >> firstCoordinateOfStraightX >> firstCoordinateOfStraightY >> secondCoordinateOfStraightX
+        >> secondCoordinateOfStraightY >> pointCoordinateX >> pointCoordinateY;
 
-    double sideA = sqrt(abs((secondCoordinateX - firstCoordinateX) * (secondCoordinateX - firstCoordinateX) +
-            (secondCoordinateY - firstCoordinateY) * (secondCoordinateY - firstCoordinateY)));
-    double sideB = sqrt(abs((thirdCoordinateX - secondCoordinateX) * (thirdCoordinateX - secondCoordinateX) +
-            (thirdCoordinateY - secondCoordinateY) * (thirdCoordinateY - secondCoordinateY)));
-    double sideC = sqrt(abs((thirdCoordinateX - firstCoordinateX) * (thirdCoordinateX - firstCoordinateX) +
-            (thirdCoordinateY - firstCoordinateY) * (thirdCoordinateY - firstCoordinateY)));
-    double halfMeter = (sideA + sideB + sideC) / 2;
-    double distance = 2 / sideA * sqrt(halfMeter * (halfMeter - sideA) * (halfMeter - sideB) * (halfMeter - sideC));
-    double sideDivisionA1 = sqrt(sideC * sideC - distance * distance);
-    double sideDivisionA2 = sqrt(sideB * sideB - distance * distance);
-    double relationship = sideDivisionA1 / sideDivisionA2;
-    double fourthCoordinateX = (firstCoordinateX + relationship * secondCoordinateX) /  (1 + relationship);
-    double fourthCoordinateY = (firstCoordinateY + relationship * secondCoordinateY) /  (1 + relationship);
+    double straightA = sqrt(abs((secondCoordinateOfStraightX - firstCoordinateOfStraightX) *
+            (secondCoordinateOfStraightX - firstCoordinateOfStraightX) +
+            (secondCoordinateOfStraightY - firstCoordinateOfStraightY) *
+            (secondCoordinateOfStraightY - firstCoordinateOfStraightY)));
+    double sideB = sqrt(abs((pointCoordinateX - secondCoordinateOfStraightX) *
+            (pointCoordinateX - secondCoordinateOfStraightX) +
+            (pointCoordinateY - secondCoordinateOfStraightY) *
+            (pointCoordinateY - secondCoordinateOfStraightY)));
+    double sideC = sqrt(abs((pointCoordinateX - firstCoordinateOfStraightX) *
+            (pointCoordinateX - firstCoordinateOfStraightX) +
+            (pointCoordinateY - firstCoordinateOfStraightY) *
+            (pointCoordinateY - firstCoordinateOfStraightY)));
+    double semiperimeter = (straightA + sideB + sideC) / 2;
+    double distance = 2 / straightA * sqrt(semiperimeter * (semiperimeter - straightA) *
+            (semiperimeter - sideB) *
+            (semiperimeter - sideC));
+    double firstSegmentStraightA = sqrt(sideC * sideC - distance * distance);
+    double secondSegmentStraightA = sqrt(sideB * sideB - distance * distance);
+    double relationship = firstSegmentStraightA / secondSegmentStraightA;
+    double distanceCoordinateX = (firstCoordinateOfStraightX + relationship *
+            secondCoordinateOfStraightX) /  (1 + relationship);
+    double distanceCoordinateY = (firstCoordinateOfStraightY + relationship *
+            secondCoordinateOfStraightY) /  (1 + relationship);
 
-    cout << distance << " " << fourthCoordinateX << " " << fourthCoordinateY;
+    cout << distance << " " << distanceCoordinateX << " " << distanceCoordinateY;
 
     return 0;
 }
