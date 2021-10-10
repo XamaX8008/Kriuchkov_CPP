@@ -6,27 +6,27 @@
 #include <algorithm>;
 
 int main() {
-    int lowerLeftCoordinateOfFirstRectangleX, lowerLeftCoordinateOfFirstRectangleY,
-        upperLeftCoordinateOfFirstRectangleX, upperLeftCoordinateOfFirstRectangleY,
-        upperRightCoordinateOfFirstRectangleX, upperRightCoordinateOfFirstRectangleY,
-        lowerRightCoordinateOfFirstRectangleX, lowerRightCoordinateOfFirstRectangleY;
-    int lowerLeftCoordinateOfSecondRectangleX, lowerLeftCoordinateOfSecondRectangleY,
-        upperLeftCoordinateOfSecondRectangleX, upperLeftCoordinateOfSecondRectangleY,
-        upperRightCoordinateOfSecondRectangleX, upperRightCoordinateOfSecondRectangleY,
-        lowerRightCoordinateOfSecondRectangleX, lowerRightCoordinateOfSecondRectangleY;
-    std::cin >> lowerLeftCoordinateOfFirstRectangleX >> lowerLeftCoordinateOfFirstRectangleY >>
-                upperLeftCoordinateOfFirstRectangleX >> upperLeftCoordinateOfFirstRectangleY >>
-                upperRightCoordinateOfFirstRectangleX >> upperRightCoordinateOfFirstRectangleY >>
-                lowerRightCoordinateOfFirstRectangleX >> lowerRightCoordinateOfFirstRectangleY >>
-                lowerLeftCoordinateOfSecondRectangleX >> lowerLeftCoordinateOfSecondRectangleY >>
-                upperLeftCoordinateOfSecondRectangleX >> upperLeftCoordinateOfSecondRectangleY >>
-                upperRightCoordinateOfSecondRectangleX >> upperRightCoordinateOfSecondRectangleY >>
-                lowerRightCoordinateOfSecondRectangleX >> lowerRightCoordinateOfSecondRectangleY;
+    int bottomLeftCoordinateOfFirstRectangleX, bottomLeftCoordinateOfFirstRectangleY,
+        topLeftCoordinateOfFirstRectangleX, topLeftCoordinateOfFirstRectangleY,
+        topRightCoordinateOfFirstRectangleX, topRightCoordinateOfFirstRectangleY,
+        bottomRightCoordinateOfFirstRectangleX, bottomRightCoordinateOfFirstRectangleY;
+    int bottomLeftCoordinateOfSecondRectangleX, bottomLeftCoordinateOfSecondRectangleY,
+        topLeftCoordinateOfSecondRectangleX, topLeftCoordinateOfSecondRectangleY,
+        topRightCoordinateOfSecondRectangleX, topRightCoordinateOfSecondRectangleY,
+        bottomRightCoordinateOfSecondRectangleX, bottomRightCoordinateOfSecondRectangleY;
+    std::cin >> bottomLeftCoordinateOfFirstRectangleX >> bottomLeftCoordinateOfFirstRectangleY >>
+                topLeftCoordinateOfFirstRectangleX >> topLeftCoordinateOfFirstRectangleY >>
+                topRightCoordinateOfFirstRectangleX >> topRightCoordinateOfFirstRectangleY >>
+                bottomRightCoordinateOfFirstRectangleX >> bottomRightCoordinateOfFirstRectangleY >>
+                bottomLeftCoordinateOfSecondRectangleX >> bottomLeftCoordinateOfSecondRectangleY >>
+                topLeftCoordinateOfSecondRectangleX >> topLeftCoordinateOfSecondRectangleY >>
+                topRightCoordinateOfSecondRectangleX >> topRightCoordinateOfSecondRectangleY >>
+                bottomRightCoordinateOfSecondRectangleX >> bottomRightCoordinateOfSecondRectangleY;
 
-    int maxLeft = std::max(lowerLeftCoordinateOfFirstRectangleX, lowerLeftCoordinateOfSecondRectangleX);
-    int maxTop = std::min(upperRightCoordinateOfFirstRectangleY, upperRightCoordinateOfSecondRectangleY);
-    int maxRight = std::min(upperRightCoordinateOfFirstRectangleX, upperRightCoordinateOfSecondRectangleX);
-    int maxBottom = std::max(lowerLeftCoordinateOfFirstRectangleY, lowerLeftCoordinateOfSecondRectangleY);
+    int maxLeft = std::max(bottomLeftCoordinateOfFirstRectangleX, bottomLeftCoordinateOfSecondRectangleX);
+    int maxTop = std::min(topRightCoordinateOfFirstRectangleY, topRightCoordinateOfSecondRectangleY);
+    int maxRight = std::min(topRightCoordinateOfFirstRectangleX, topRightCoordinateOfSecondRectangleX);
+    int maxBottom = std::max(bottomLeftCoordinateOfFirstRectangleY, bottomLeftCoordinateOfSecondRectangleY);
 
     int width = maxRight - maxLeft;
     int height = maxTop - maxBottom;
