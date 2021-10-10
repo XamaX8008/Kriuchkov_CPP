@@ -10,26 +10,40 @@ int main()
 {
     int firstCoordinateOfStraightX, firstCoordinateOfStraightY, secondCoordinateOfStraightX,
         secondCoordinateOfStraightY;
-    int pointCoordinateX,  pointCoordinateY;
+    int pointCoordinateX, pointCoordinateY;
     cin >> firstCoordinateOfStraightX >> firstCoordinateOfStraightY >> secondCoordinateOfStraightX
         >> secondCoordinateOfStraightY >> pointCoordinateX >> pointCoordinateY;
 
-    double straight = sqrt(abs((secondCoordinateOfStraightX - firstCoordinateOfStraightX) *
+    double straight = sqrt(
+        abs(
+            (secondCoordinateOfStraightX - firstCoordinateOfStraightX) *
             (secondCoordinateOfStraightX - firstCoordinateOfStraightX) +
             (secondCoordinateOfStraightY - firstCoordinateOfStraightY) *
-            (secondCoordinateOfStraightY - firstCoordinateOfStraightY)));
-    double firstSideTriangle = sqrt(abs((pointCoordinateX - secondCoordinateOfStraightX) *
+            (secondCoordinateOfStraightY - firstCoordinateOfStraightY)
+        )
+    );
+    double firstSideTriangle = sqrt(
+        abs(
+            (pointCoordinateX - secondCoordinateOfStraightX) *
             (pointCoordinateX - secondCoordinateOfStraightX) +
             (pointCoordinateY - secondCoordinateOfStraightY) *
-            (pointCoordinateY - secondCoordinateOfStraightY)));
-    double secondSideTriangle = sqrt(abs((pointCoordinateX - firstCoordinateOfStraightX) *
+            (pointCoordinateY - secondCoordinateOfStraightY)
+        )
+    );
+    double secondSideTriangle = sqrt(
+        abs(
+            (pointCoordinateX - firstCoordinateOfStraightX) *
             (pointCoordinateX - firstCoordinateOfStraightX) +
             (pointCoordinateY - firstCoordinateOfStraightY) *
-            (pointCoordinateY - firstCoordinateOfStraightY)));
+            (pointCoordinateY - firstCoordinateOfStraightY)
+        )
+    );
     double semiperimeter = (straight + firstSideTriangle + secondSideTriangle) / 2;
-    double distance = 2 / straight * sqrt(semiperimeter * (semiperimeter - straight) *
+    double distance = 2 / straight * sqrt(
+            semiperimeter * (semiperimeter - straight) *
             (semiperimeter - firstSideTriangle) *
-            (semiperimeter - secondSideTriangle));
+            (semiperimeter - secondSideTriangle)
+    );
     double firstSegmentStraightA = sqrt(secondSideTriangle * secondSideTriangle - distance * distance);
     double secondSegmentStraightA = sqrt(firstSideTriangle * firstSideTriangle - distance * distance);
     double relationship = firstSegmentStraightA / secondSegmentStraightA;
