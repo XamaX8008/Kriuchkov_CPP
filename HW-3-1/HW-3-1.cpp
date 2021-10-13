@@ -3,19 +3,17 @@
 //
 
 #include <iostream>
-#include <algorithm>
-#include <cmath>
 
 int main() {
     int hourHand, minuteHand;
     std::cin >> hourHand >> minuteHand;
 
     if (hourHand != 0) {
-        hourHand = abs(hourHand - 12);
+        hourHand = 12 - hourHand;
     }
 
     if (minuteHand != 0) {
-        minuteHand = abs(minuteHand - 60);
+        minuteHand = 60 - minuteHand;
     }
     std::cout << hourHand << " " << minuteHand;
 
