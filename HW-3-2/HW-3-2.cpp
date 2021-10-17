@@ -3,7 +3,6 @@
 //
 
 #include <iostream>
-#include <algorithm>
 
 int main() {
     int number;
@@ -21,11 +20,11 @@ int main() {
     }
     else {
         int lastValue = 0;
-        int flag;
+        int hold;
         for (int i = 1; i < number; i++) {
-            flag = value;
+            hold = value;
             value += lastValue;
-            lastValue = flag;
+            lastValue = hold;
         }
     }
 
