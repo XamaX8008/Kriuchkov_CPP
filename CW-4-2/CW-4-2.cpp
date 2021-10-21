@@ -4,24 +4,19 @@
 
 #include <iostream>
 #include <vector>
-#include <string>
 
 using namespace std;
 
-int main()
-{
+int main() {
     int count;
     cin >> count;
     vector<int> temperature;
-    for (int i = 0; i < count; i++) {
-        int a;
-        cin >> a;
-        temperature.push_back(a);
-    }
-
     int sum = 0;
-    for (int i = 0; i < temperature.size(); i++) {
-        sum += temperature[i];
+    for (int i = 0; i < count; i++) {
+        int completion;
+        cin >> completion;
+        temperature.push_back(completion);
+        sum += completion;
     }
 
     double averageTemperature = sum / temperature.size();
