@@ -8,7 +8,7 @@ int main() {
     int number;
     std::cin >> number;
 
-    int value = 1;
+    long value = 1;
 
     if (number == 0) {
         std::cout << 0;
@@ -19,8 +19,8 @@ int main() {
         return 0;
     }
     else {
-        int lastValue = 0;
-        int hold;
+        long lastValue = 0;
+        long hold;
         for (int i = 1; i < number; i++) {
             hold = value;
             value += lastValue;
